@@ -18,6 +18,9 @@
   font-size: 1.4rem;
 }
 
+.HomePageForm .input-error {
+  border: 2px solid red;
+}
 .HomePageForm label {
   font-size: 1.4rem;
 }

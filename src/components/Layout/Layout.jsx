@@ -14,9 +14,12 @@ const Layout = () => {
         <ul>
           <li><NavLink to="/">Home</NavLink></li>
           <li><NavLink to="/shoes">Shoes</NavLink></li>
-          {isAdmin &&
-            (<li><NavLink to="/shoes/add">Add Shoe</NavLink></li>) &&
-            (<li><NavLink to="/" onClick={() => logout()}>Log out</NavLink></li>)}
+          {isAdmin && (
+            <>
+              <li><NavLink to="/shoes/add">Add Shoe</NavLink></li>
+              <li><NavLink to="/" onClick={() => logout()}>Log out</NavLink></li>
+            </>
+          )}
         </ul>
       </nav>
       <Outlet />
