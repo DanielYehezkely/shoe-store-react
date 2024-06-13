@@ -1,19 +1,22 @@
+import React, { useState } from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
 
-import React, { useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
-import { useAdmin } from "../../context/CheckAdminContext"; 
+import { useAdmin } from '../../context/CheckAdminContext';
+import { ADMIN } from '../../models/constants';
+import HomePageForm from '../../components/HomePageForm/HomePageForm'; 
+
 import './HomePage.css';
 
 const HomePage = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const { loginAsAdmin, isAdmin } = useAdmin(); 
+  const { loginAsAdmin, isAdmin } = useAdmin();
   const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
-    if (username === 'admin' && password === 'admin12341234') {
-      loginAsAdmin(); 
+    if (username === ADMIN.username && password === ADMIN.password) {
+      loginAsAdmin();
       navigate('/shoes');
     } else {
       alert("Invalid credentials. Only admin can log in.");
@@ -21,23 +24,23 @@ const HomePage = () => {
   };
 
   return (
-    <div>
-      <h1>Welcome to the Shoe Store</h1>
-      {isAdmin ? '' : (<form onSubmit={handleLogin}>
-        <div>
-          <label>Username:</label>
-          <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
-        </div>
-        <div>
-          <label>Password:</label>
-          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-        </div>
-        <button type="submit">Login</button>
-      </form>)}
-      
-      <button>
-        <NavLink to="/shoes">Go to Shoes</NavLink>
-      </button>
+    <div className="page HomePage">
+      <div className="home-page-image1"></div>
+      <div className="home-page-image2"></div>
+      <main className="home-page-main">
+        <h1 className="home-page-title">Welcome to Shoes </h1>
+        <button className='enter-store-button'>
+          <NavLink to="/shoes">Runing in !</NavLink>
+        </button>
+        {!isAdmin && (
+          <HomePageForm
+            username={username}
+            password={password}
+            setUsername={setUsername}
+            setPassword={setPassword}
+            handleLogin={handleLogin}
+          />)}
+      </main>
     </div>
   );
 };

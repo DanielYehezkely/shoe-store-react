@@ -1,0 +1,30 @@
+.HomePageForm {
+  width: 70%;
+  height: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.527);
+  gap: 2rem;
+  border-radius: 4rem;
+}
+.HomePageForm h1 {
+  font-size: 3rem;
+}
+
+.HomePageForm input {
+  padding: 0.5rem;
+  font-size: 1.4rem;
+}
+
+.HomePageForm label {
+  font-size: 1.4rem;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}

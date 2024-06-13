@@ -1,6 +1,8 @@
-/* .hero-container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.page{
   height: 100vh;
-} */
+}
+
+@font-face {
+  font-family: "HeadlineFont";
+  src: url("/public/assets/fonts/DancingScript-Regular.ttf") format("truetype");
+}
