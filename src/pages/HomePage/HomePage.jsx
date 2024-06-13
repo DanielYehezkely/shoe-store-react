@@ -9,6 +9,7 @@ import { ADMIN } from '../../models/constants';
 import './HomePage.css';
 
 const HomePage = () => {
+  
   const { isAdmin, loginAsAdmin } = useAdmin();
   const navigate = useNavigate();
   const [error, setError] = useState(false);
