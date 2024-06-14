@@ -36,7 +36,7 @@ const HomePageForm = ({ handleLogin, error }) => {
           className={inputClass} 
         />
       </div>
-      <button type="submit" className='enter-store-button'>Login<IoLogInOutline /></button>
+      <button type="submit" className='btn'>Login<IoLogInOutline /></button>
     </form>
   );
 };

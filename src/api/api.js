@@ -9,7 +9,16 @@ export const getShoes = async () => {
   } catch (error) {
     throw new Error(error); // make this constants errors 
   }
-}
+};
+
+export const getShoeById = async (shoeId) => {
+  try {
+    const response = await axios.get(`${BASE_URL}/${shoeId}`);
+    return response.data;
+  } catch (error) {
+    throw new Error("Unable to fetch shoe details.");// make this constants errors 
+  }
+};
 
 export const addShoe = async (shoe) => {
   try {
@@ -17,8 +26,7 @@ export const addShoe = async (shoe) => {
   } catch (error) {
     throw new Error("Unable to add shoe to db")// make this constants errors 
   }
-
-}
+};
 
 export const deleteShoe = async (shoe) => {
   try {
@@ -26,7 +34,7 @@ export const deleteShoe = async (shoe) => {
   } catch (error) {
     throw new Error("Unable to delete shoe.")// make this constants errors 
   }
-}
+};
 
 export const updateShoe = async (shoe) => {
   try {
@@ -34,4 +42,4 @@ export const updateShoe = async (shoe) => {
   } catch (error) {
     throw new Error("Unable to delete shoe.")// make this constants errors 
   }
-}
+};

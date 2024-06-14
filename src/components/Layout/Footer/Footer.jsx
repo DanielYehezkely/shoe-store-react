@@ -34,7 +34,7 @@ const Footer = () => {
   return (
     <div className="Footer">
       <div className="footer-logo">
-        <img src="/public/assets/svg/logo-no-background.svg" alt="footer-logo" />
+        <img src="/assets/svg/logo-no-background.svg" alt="footer-logo" />
       </div>
       <div className="copyrights">
         &copy; 2024 Daniel Yehezkely. All rights reserved.

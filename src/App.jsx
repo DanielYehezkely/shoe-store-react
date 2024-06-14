@@ -22,7 +22,7 @@ function App() {
           element: <ShoesPage />,
         },
         {
-          path: 'shoes/:shoeId',
+          path: ':shoeId',
           element: <ShoePage />,
         },
         {

@@ -33,7 +33,7 @@ const HomePage = () => {
       <main className="home-page-main">
         <h1 className="home-page-title">Welcome to Shoes </h1>
         <GiSonicShoes className='shoes-icon' />
-        <button className='enter-store-button'>
+        <button className='btn'>
           <NavLink to="/shoes">Start Shopping </NavLink>
           <FaArrowCircleRight />
         </button>
