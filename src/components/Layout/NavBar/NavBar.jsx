@@ -1,31 +1,48 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
+import { GiSonicShoes } from "react-icons/gi";
 
 import { useAdmin } from "../../../context/CheckAdminContext";
-import { NavLink } from "react-router-dom";
 
 import './NavBar.css'
 
 const NavBar = () => {
-
   const { isAdmin, logout } = useAdmin();
 
   return (
-     <>
+    <>
       <nav className="nav-bar">
-        <div className="nav-bar-logo">Shoes <i class="fa-solid fa-shoe-prints"></i></div>
+        <div className="nav-bar-logo">Shoes <GiSonicShoes /></div>
         <ul>
-          <li><NavLink to="/">Home</NavLink></li>
-          <li><NavLink to="/shoes">Shoes</NavLink></li>
+          <li>
+            <NavLink to="/" className={({ isActive }) => (isActive ? 'isActive' : '')} end>
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/shoes" className={({ isActive }) => (isActive ? 'isActive' : '')} end>
+              Shoes
+            </NavLink>
+          </li>
           {isAdmin && (
             <>
-              <li><NavLink to="/shoes/add">Add Shoe</NavLink></li>
-              <li><NavLink to="/" onClick={() => logout()}>Log out</NavLink></li>
+              <li>
+                <NavLink to="/shoes/add" className={({ isActive }) => (isActive ? 'isActive' : '')}>
+                  Add Shoe
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/" onClick={() => logout()} className={({ isActive }) => (isActive ? 'isActive' : '')}>
+                  Log out
+                </NavLink>
+              </li>
             </>
           )}
         </ul>
       </nav>
-     </>
-  )
+    </>
+  );
 };
 
 export default NavBar;
+

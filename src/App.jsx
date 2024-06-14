@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { HomePage, ShoesPage, AddShoePage, NotFoundPage, ShoePage } from './pages';
 import Layout from "./components/Layout/Layout";
 import { AdminProvider } from "./context/CheckAdminContext";
+import { FetchShoesProvider } from "./context/FetchShoesContext";
 
 
 function App() {
@@ -38,7 +39,9 @@ function App() {
 
   return (
     <AdminProvider>
-      <RouterProvider router={router} />
+      <FetchShoesProvider>
+        <RouterProvider router={router} />
+      </FetchShoesProvider>
     </AdminProvider>
   );
 }

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
+import { FaArrowCircleRight } from "react-icons/fa";
+import { GiSonicShoes } from "react-icons/gi";
 
 import { useAdmin } from '../../context/CheckAdminContext';
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
@@ -9,7 +11,7 @@ import { ADMIN } from '../../models/constants';
 import './HomePage.css';
 
 const HomePage = () => {
-  
+
   const { isAdmin, loginAsAdmin } = useAdmin();
   const navigate = useNavigate();
   const [error, setError] = useState(false);
@@ -29,9 +31,11 @@ const HomePage = () => {
       <div className="home-page-image1"></div>
       <div className="home-page-image2"></div>
       <main className="home-page-main">
-        <h1 className="home-page-title">Welcome to Shoes</h1>
+        <h1 className="home-page-title">Welcome to Shoes </h1>
+        <GiSonicShoes className='shoes-icon' />
         <button className='enter-store-button'>
-          <NavLink to="/shoes">Running in!</NavLink>
+          <NavLink to="/shoes">Start Shopping </NavLink>
+          <FaArrowCircleRight />
         </button>
         {!isAdmin && (
           <HomePageForm handleLogin={handleLogin} error={error} />

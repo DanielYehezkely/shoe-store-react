@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { IoLogInOutline } from "react-icons/io5";
 
 import './HomePageForm.css';
 
@@ -35,7 +36,7 @@ const HomePageForm = ({ handleLogin, error }) => {
           className={inputClass} 
         />
       </div>
-      <button type="submit" className='enter-store-button'>Login</button>
+      <button type="submit" className='enter-store-button'>Login<IoLogInOutline /></button>
     </form>
   );
 };

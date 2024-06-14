@@ -6,7 +6,6 @@
   justify-content: center;
 }
 
-
 .HomePage h1 {
   font-family: "HeadlineFont", sans-serif;
 }
@@ -47,7 +46,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 6rem;
+  gap: 3rem;
 }
 
 .enter-store-button {
@@ -61,6 +60,14 @@
   padding: 10px;
   box-shadow: 0px 6px 0px #d35400;
   transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.enter-store-button i {
+  margin-left: 0.5rem;
 }
 
 .enter-store-button a {
@@ -75,4 +82,8 @@
 
 .enter-store-button:hover {
   transform: scale(1.1);
+}
+
+.shoes-icon {
+  font-size: 12rem;
 }

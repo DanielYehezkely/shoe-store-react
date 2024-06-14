@@ -6,21 +6,29 @@
   font-size: 2rem;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
 }
 
 .nav-bar ul {
-  
   display: flex;
   gap: 1.8rem;
   justify-content: center;
   align-items: center;
-
+  width: 40%;
+  height: 100%;
 }
 
 .nav-bar ul li a {
  text-decoration: none; 
  color: white;
+ transition: all 0.3s ease;
+ padding: 1rem;
+ border-radius: 1rem;
+}
+.nav-bar ul li a:hover {
+  background-color: #086fb4;
 }
 
 .nav-bar-logo{
@@ -28,8 +36,18 @@
   color: white;
   font-family: 'HeadlineFont', sans-serif;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 20%;
 }
 
 .nav-bar-logo i{
   font-size: 3.5rem;
 }
+
+.nav-bar ul li a.isActive {
+  color: #e48900; 
+}
+
