@@ -20,7 +20,7 @@ const SingleShoeCard = ({ shoe }) => {
             {isAdmin ? (
               <div className="admin-shoe-buttons">
                 <EditButton shoeId={shoe.id}/>
-                <DeleteButton />
+                <DeleteButton shoeId={shoe} />
               </div>
             ) : (
               <button className="btn buy-button">Buy Now</button>

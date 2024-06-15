@@ -28,9 +28,9 @@ export const addShoe = async (shoe) => {
   }
 };
 
-export const deleteShoe = async (shoe) => {
+export const deleteShoe = async (shoeId) => {
   try {
-    const response = await axios.delete(BASE_URL, shoe);
+    const response = await axios.delete(`${BASE_URL}/${shoeId}`);
   } catch (error) {
     throw new Error("Unable to delete shoe.")// make this constants errors 
   }
