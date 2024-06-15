@@ -2,7 +2,7 @@ import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import { HomePage, ShoesPage, AddShoePage, NotFoundPage, ShoePage, EditPage } from './pages';
-import Layout from "./components/Layout/Layout";
+import { Layout } from "./components";
 import { AdminProvider } from "./context/CheckAdminContext";
 import { FetchShoesProvider } from "./context/FetchShoesContext";
 

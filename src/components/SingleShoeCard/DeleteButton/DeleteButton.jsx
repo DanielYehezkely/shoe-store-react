@@ -3,10 +3,10 @@ import { useNavigate } from "react-router";
 
 import { deleteShoe } from "../../../api/api";
 import { useFetchShoes } from "../../../context/FetchShoesContext";
+
 import Loader from "../../Loader/Loader";
 import ErrorMessage from "../../ErrorMessage/ErrorMessage";
 
-import './DeleteButton.css';
 
 const DeleteButton = ({ shoeId }) => {
 

@@ -1,13 +1,12 @@
 import React from "react";
-
 import { FaGithub } from "react-icons/fa";
 import { IoLogoLinkedin } from "react-icons/io5";
 import { SiGmail } from "react-icons/si";
+import { toast, ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css'; 
 
 import {GITHUB_LINK, GMAIL, LINKEDIN_LINK } from '../../../models/constants'
 
-import { toast, ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css'; 
 
 
 import './Footer.css';

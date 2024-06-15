@@ -1,10 +1,10 @@
 import React from "react";
-
-import { truncateText } from "../../utils/limitWords";
 import { useNavigate } from "react-router";
 
-import './ShoeCard.css';
+import { truncateText } from "../../utils/limitWords";
 import { useAdmin } from "../../context/CheckAdminContext";
+
+import './ShoeCard.css';
 
 
 const ShoeCard = ({ shoe }) => {

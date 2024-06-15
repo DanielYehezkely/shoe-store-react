@@ -3,10 +3,10 @@ import { Link, useNavigate } from 'react-router-dom';
 import { FaArrowCircleRight } from "react-icons/fa";
 import { GiSonicShoes } from "react-icons/gi";
 
+import { ErrorMessage, HomePageForm } from '../../components';
 import { useAdmin } from '../../context/CheckAdminContext';
-import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
-import HomePageForm from '../../components/HomePageForm/HomePageForm';
 import { ADMIN } from '../../models/constants';
+
 
 import './HomePage.css';
 

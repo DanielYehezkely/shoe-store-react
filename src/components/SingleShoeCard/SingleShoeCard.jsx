@@ -1,7 +1,9 @@
 import React from "react";
 import { useAdmin } from "../../context/CheckAdminContext";
+
 import DeleteButton from "./DeleteButton/DeleteButton";
 import EditButton from "./EditButton/EditButton";
+
 import './SingleShoeCard.css';
 
 

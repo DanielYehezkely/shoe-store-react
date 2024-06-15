@@ -1,10 +1,9 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 
-import ShoeGenericForm from "../../components/ShoeGenericForm/ShoeGenericForm";
+import { ShoeGenericForm, ErrorMessage, Loader } from "../../components";
+
 import useFetchShoe from "../../hooks/useFetchShoe";
-import Loader from '../../components/Loader/Loader';
-import ErrorMessage from '../../components/ErrorMessage/ErrorMessage'
 
 import './EditPage.css';
 

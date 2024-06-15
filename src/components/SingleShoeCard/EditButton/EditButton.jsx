@@ -1,6 +1,5 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import './EditButton.css';
 
 const EditButton = ({ shoeId }) => {
   const navigate = useNavigate();

@@ -1,6 +1,6 @@
 import React from "react";
 
-import ShoeGenericForm from "../../components/ShoeGenericForm/ShoeGenericForm";
+import { ShoeGenericForm } from "../../components";
 
 import './AddShoePage.css'
 

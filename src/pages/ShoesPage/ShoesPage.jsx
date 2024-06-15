@@ -1,9 +1,8 @@
 import React from "react";
 
+import { Loader, ShoeCard, ErrorMessage } from "../../components";
+
 import { useFetchShoes } from "../../context/FetchShoesContext";
-import Loader from '../../components/Loader/Loader';
-import ShoeCard from "../../components/ShoeCard/ShoeCard";
-import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 
 import './ShoesPage.css';
 

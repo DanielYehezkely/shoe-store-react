@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
-import Loader from '../../components/Loader/Loader';
+import { Loader, SingleShoeCard } from "../../components";
+
 import useFetchShoe from "../../hooks/useFetchShoe";
-import SingleShoeCard from "../../components/SingleShoeCard/SingleShoeCard";
 
 import './ShoePage.css';
 
