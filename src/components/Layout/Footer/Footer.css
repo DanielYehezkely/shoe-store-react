@@ -6,6 +6,7 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  margin-top: auto; 
 }
 
 .footer-logo {

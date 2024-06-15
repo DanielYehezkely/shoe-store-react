@@ -4,12 +4,20 @@ import './FormInput.css';
 const FormInput = ({ label, id, type = "text", value, onChange }) => (
   <div className="input-group">
     <label htmlFor={id}>{label}:</label>
-    <input
-      type={type}
-      id={id}
-      value={value}
-      onChange={onChange}
-    />
+    {type === "textarea" ? (
+      <textarea
+        id={id}
+        value={value}
+        onChange={onChange}
+      />
+    ) : (
+      <input
+        type={type}
+        id={id}
+        value={value}
+        onChange={onChange}
+      />
+    )}
   </div>
 );
 

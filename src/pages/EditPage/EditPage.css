@@ -1,5 +1,5 @@
 .EditPage {
-  height: 76.4vh;
+  flex: 1; 
   display: flex;
   align-items: center;
   justify-content: center;

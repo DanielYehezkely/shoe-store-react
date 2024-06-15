@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { updateShoe, addShoe } from "../../api/api"; // Assume addShoe is the API call to add a new shoe
+import { updateShoe, addShoe } from "../../api/api"; 
 import { useFetchShoes } from "../../context/FetchShoesContext";
 import FormInput from "./FormInput/FormInput";
 import Loader from "../../components/Loader/Loader";
@@ -11,6 +11,8 @@ import './ShoeGenericForm.css';
 
 const ShoeGenericForm = ({ shoe }) => {
   const [name, setName] = useState("");
+  const [info, setInfo] = useState("");
+  const [id, setId] = useState("");
   const [price, setPrice] = useState("");
   const [image, setImage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -24,6 +26,8 @@ const ShoeGenericForm = ({ shoe }) => {
       setName(shoe.name);
       setPrice(shoe.price);
       setImage(shoe.image);
+      setInfo(shoe.info)
+      setId(shoe.id)
     }
   }, [shoe]);
 
@@ -37,7 +41,9 @@ const ShoeGenericForm = ({ shoe }) => {
         const updatedShoe = {
           ...shoe,
           name,
+          id,
           price,
+          info,
           image
         };
         await updateShoe(updatedShoe);
@@ -45,7 +51,9 @@ const ShoeGenericForm = ({ shoe }) => {
       } else {
         const newShoe = {
           name,
+          id,
           price,
+          info,
           image
         };
         await addShoe(newShoe);
@@ -59,7 +67,7 @@ const ShoeGenericForm = ({ shoe }) => {
     }
   };
 
-  return (
+   return (
     <form className="ShoeGenericForm" onSubmit={handleSubmit}>
       <h1 className="shoe-form-title">{shoe ? "Edit Your Shoe" : "Add New Shoe"}</h1>
       {isLoading && <Loader />}
@@ -70,6 +78,19 @@ const ShoeGenericForm = ({ shoe }) => {
           id="shoe-name"
           value={name}
           onChange={(e) => setName(e.target.value)}
+        />
+        <FormInput
+          label="Shoe Id"
+          id="shoe-id"
+          value={id}
+          onChange={(e) => setId(e.target.value)}
+        />
+        <FormInput
+          label="Shoe Info"
+          id="shoe-info"
+          type="textarea" 
+          value={info}
+          onChange={(e) => setInfo(e.target.value)}
         />
         <FormInput
           label="Shoe Price"
