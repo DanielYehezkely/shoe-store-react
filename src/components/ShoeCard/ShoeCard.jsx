@@ -20,7 +20,7 @@ const ShoeCard = ({ shoe }) => {
       <div className="shoe-description">
         <h3 className="shoe-name">{shoe.name}</h3>
         <p className="shoe-info">{truncateText(shoe.info, 20)}</p>
-        <p className="shoe-price">${shoe.price.toFixed(2)}</p>
+        <p className="shoe-price">${shoe.price}</p>
       </div>
       <button className="btn buy-button">Buy Now</button>
     </div>

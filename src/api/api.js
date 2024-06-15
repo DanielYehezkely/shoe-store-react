@@ -36,10 +36,11 @@ export const deleteShoe = async (shoe) => {
   }
 };
 
+
 export const updateShoe = async (shoe) => {
   try {
-    const response = await axios.put(BASE_URL, shoe);
+    const response = await axios.put(`${BASE_URL}/${shoe.id}`, shoe); 
   } catch (error) {
-    throw new Error("Unable to delete shoe.")// make this constants errors 
+    throw new Error("Unable to update shoe."); // make this constants errors 
   }
 };

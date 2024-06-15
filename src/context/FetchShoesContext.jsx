@@ -31,7 +31,7 @@ export const FetchShoesProvider = ({ children }) => {
 
 
   return (
-    <FetchShoesContext.Provider value={{error, isLoading, shoes}}>
+    <FetchShoesContext.Provider value={{error, isLoading, shoes, fetchShoes}}>
       {children}
     </FetchShoesContext.Provider>
   );

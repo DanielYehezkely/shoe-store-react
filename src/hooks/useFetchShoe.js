@@ -7,6 +7,7 @@ const useFetchShoe = (shoeId) => {
   const [shoe, setShoe] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  
 
   useEffect(() => {
     const fetchShoe = async () => {
