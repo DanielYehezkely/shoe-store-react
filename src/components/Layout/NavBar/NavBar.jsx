@@ -32,6 +32,11 @@ const NavBar = () => {
                 </NavLink>
               </li>
               <li>
+                <NavLink to="/shoes/panel" className={({ isActive }) => (isActive ? 'isActive' : '')}>
+                  Panel
+                </NavLink>
+              </li>
+              <li>
                 <NavLink to="/" onClick={() => logout()} className={({ isActive }) => (isActive ? 'isActive' : '')}>
                   Log out
                 </NavLink>

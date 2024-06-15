@@ -5,6 +5,7 @@ import { HomePage, ShoesPage, AddShoePage, NotFoundPage, ShoePage, EditPage } fr
 import { Layout } from "./components";
 import { AdminProvider } from "./context/CheckAdminContext";
 import { FetchShoesProvider } from "./context/FetchShoesContext";
+import PanelPage from "./pages/PanelPage/PanelPage";
 
 
 
@@ -33,6 +34,10 @@ function App() {
         {
           path: ':shoeId/edit', 
           element: <EditPage />,
+        },
+        {
+          path: 'panel',
+          element: <PanelPage />,
         }
       ],
     },
