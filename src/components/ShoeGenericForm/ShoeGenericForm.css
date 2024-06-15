@@ -7,7 +7,6 @@
   flex-direction: column;
   gap: 2rem;
   border-radius: 4rem;
-  
 }
 
 .shoe-form-title {
@@ -15,10 +14,11 @@
 }
 
 .inputs-container {
- width: 80%;
- display: flex;
- flex-direction: column;
- gap: 1rem;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
+
 
 

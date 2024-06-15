@@ -1,15 +1,14 @@
 import React from 'react';
-
 import './FormInput.css';
 
-const FormInput = ({ label, id, type = "text", value, onChange }) => (
+const FormInput = ({ label, id, type = "text", value, onChange, className }) => (
   <div className="input-group">
     <label htmlFor={id}>{label}:</label>
     {type === "textarea" ? (
       <textarea
         id={id}
         value={value}
-        onChange={onChange}
+        onChange={onChange} 
       />
     ) : (
       <input
@@ -17,6 +16,7 @@ const FormInput = ({ label, id, type = "text", value, onChange }) => (
         id={id}
         value={value}
         onChange={onChange}
+        className={className} 
       />
     )}
   </div>
