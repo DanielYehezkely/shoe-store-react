@@ -1,0 +1,63 @@
+@media only screen and (max-width: 575.98px) {
+ 
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767.98px) {
+ 
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991.98px) {
+  
+}
+
+@media only screen and (min-width: 1700px) {
+
+.home-page-title {
+  font-size: 10rem;
+}
+
+.home-page-main {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 6rem;
+}
+
+.shoes-icon {
+  font-size: 20rem;
+}
+
+.btn {
+  font-size: 2rem;
+}
+
+.HomePageForm {
+  gap: 5rem;
+}
+
+.HomePageForm h1 {
+  font-size: 6rem;
+}
+
+.HomePageForm input {
+  padding: 0.5rem;
+  font-size: 1.4rem;
+}
+
+.HomePageForm .input-error {
+  border: 2px solid red;
+}
+.HomePageForm label {
+  font-size: 1.4rem;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+}
