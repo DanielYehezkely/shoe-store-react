@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import { BASE_URL, DELETE_SHOE_ERROR, GET_SHOES_ERROR, GET_SHOE_ERROR, POST_SHOE_ERROR, PUT_SHOE_ERROR } from '../constants/errorMessages'; 
+import { BASE_URL, DELETE_SHOE_ERROR, GET_SHOES_ERROR, GET_SHOE_ERROR, POST_SHOE_ERROR, PUT_SHOE_ERROR } from '../models/constants'; 
 
 export const getShoes = async () => {
   try {
