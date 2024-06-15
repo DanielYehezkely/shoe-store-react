@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaArrowCircleRight } from "react-icons/fa";
 import { GiSonicShoes } from "react-icons/gi";
 
@@ -33,10 +33,7 @@ const HomePage = () => {
       <main className="home-page-main">
         <h1 className="home-page-title">Welcome to Shoes </h1>
         <GiSonicShoes className='shoes-icon' />
-        <button className='btn'>
-          <NavLink to="/shoes">Start Shopping </NavLink>
-          <FaArrowCircleRight />
-        </button>
+        <Link to="/shoes" className='btn'>Start Shopping<FaArrowCircleRight /> </Link>
         {!isAdmin && (
           <HomePageForm handleLogin={handleLogin} error={error} />
         )}

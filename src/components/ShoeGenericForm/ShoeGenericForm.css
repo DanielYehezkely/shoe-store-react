@@ -1,0 +1,30 @@
+.ShoeGenericForm {
+  width: 30%;
+  height: 80%;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 4rem;
+  gap: 3rem;
+}
+
+.update-button {
+  background-color: #0aa023;
+  border: 1px solid #8ae997;
+  box-shadow: 0px 6px 0px #00d300;
+}
+
+.shoe-form-title {
+  font-size: 3rem;
+}
+
+.inputs-container {
+ width: 60%;
+ display: flex;
+ flex-direction: column;
+ gap: 1rem;
+}
+
+

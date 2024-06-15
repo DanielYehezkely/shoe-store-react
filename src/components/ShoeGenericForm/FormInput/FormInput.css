@@ -1,0 +1,27 @@
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input-group label {
+ font-size: 1.6rem;
+}
+
+.input-group input{
+  border-radius: 1rem;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.363) 0px 1px 4px;
+  padding: 1rem;
+}
+
+.input-group input:focus {
+  background-color: rgba(245, 245, 245, 0.726);
+  box-shadow: rgb(23, 0, 126) 0px 1px 6px;
+  border: none; 
+  outline: none;
+}
+
+.input-group input[type= number]{
+  width: 30%;
+}

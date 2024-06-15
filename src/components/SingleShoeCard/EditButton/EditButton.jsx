@@ -1,9 +1,18 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import './EditButton.css';
 
-const EditButton = () => {
+const EditButton = ({ shoeId }) => {
+  const navigate = useNavigate();
+
+  const handleEditClick = () => {
+    navigate(`/shoes/${shoeId}/edit`);
+  };
+
   return (
-    <button className="btn EditButton" >Edit Shoe</button>
+    <button className="btn EditButton" onClick={handleEditClick}>
+      Edit Shoe
+    </button>
   );
 };
 

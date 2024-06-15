@@ -1,10 +1,11 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import { HomePage, ShoesPage, AddShoePage, NotFoundPage, ShoePage } from './pages';
+import { HomePage, ShoesPage, AddShoePage, NotFoundPage, ShoePage, EditPage } from './pages';
 import Layout from "./components/Layout/Layout";
 import { AdminProvider } from "./context/CheckAdminContext";
 import { FetchShoesProvider } from "./context/FetchShoesContext";
+
 
 
 function App() {
@@ -29,6 +30,10 @@ function App() {
           path: 'add',
           element: <AddShoePage />,
         },
+        {
+          path: ':shoeId/edit', 
+          element: <EditPage />,
+        }
       ],
     },
     {

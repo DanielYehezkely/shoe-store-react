@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useAdmin } from "../../context/CheckAdminContext";
 import DeleteButton from "./DeleteButton/DeleteButton";
 import EditButton from "./EditButton/EditButton";
@@ -19,7 +19,7 @@ const SingleShoeCard = ({ shoe }) => {
             <p className="single-shoe-price">${shoe.price}</p>
             {isAdmin ? (
               <div className="admin-shoe-buttons">
-                <EditButton/>
+                <EditButton shoeId={shoe.id}/>
                 <DeleteButton />
               </div>
             ) : (
