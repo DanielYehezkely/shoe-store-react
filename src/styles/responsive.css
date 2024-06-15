@@ -71,9 +71,7 @@
   .nav-bar {
     height: 12vh;
   }
-  .nav-bar ul {
-    /* display: none; */
-  }
+  
   .nav-bar ul a {
     font-size: 1.6rem;
   }

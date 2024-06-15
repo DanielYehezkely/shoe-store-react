@@ -1,6 +1,5 @@
 import React from "react";
 
-import './PanelTable.css'
 import { Link } from "react-router-dom";
 
 const PanelTable = ({shoes}) => {
