@@ -12,8 +12,12 @@ export const getShoes = async () => {
 };
 
 export const getShoeById = async (shoeId) => {
+  
   try {
     const response = await axios.get(`${BASE_URL}/${shoeId}`);
+    if (response.status === 200 && response.data) {
+      
+    }
     return response.data;
   } catch (error) {
     throw new Error("Unable to fetch shoe details.");// make this constants errors 

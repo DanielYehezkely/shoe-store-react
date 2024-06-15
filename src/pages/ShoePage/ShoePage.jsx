@@ -1,24 +1,34 @@
-import React from "react";
-import { useParams } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 
-import Loader from '../../components/Loader/Loader'
-import ErrorMessage from '../../components/ErrorMessage/ErrorMessage'
+import Loader from '../../components/Loader/Loader';
 import useFetchShoe from "../../hooks/useFetchShoe";
-
-import './ShoePage.css';
 import SingleShoeCard from "../../components/SingleShoeCard/SingleShoeCard";
 
-const ShoePage = () => {
+import './ShoePage.css';
 
+const ShoePage = () => {
   const { shoeId } = useParams(); 
-  const { shoe, isLoading, error } = useFetchShoe(shoeId); 
+  const { shoe, isLoading, error } = useFetchShoe(shoeId);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (error) {
+      navigate('/not-found');
+    }
+  }, [error, navigate]);
 
   return (
     <div className="ShoePage">
-      {isLoading ? <Loader/> : (
-        <SingleShoeCard shoe={shoe}/>
+      {isLoading ? (
+        <Loader />
+      ) : (
+        shoe ? (
+          <SingleShoeCard shoe={shoe} />
+        ) : (
+          <p>{error}</p>
+        )
       )}
-      {error ? <ErrorMessage error={error}/> : ''}
     </div>
   );
 };

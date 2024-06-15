@@ -33,7 +33,7 @@ const HomePage = () => {
       <main className="home-page-main">
         <h1 className="home-page-title">Welcome to Shoes </h1>
         <GiSonicShoes className='shoes-icon' />
-        <Link to="/shoes" className='btn'>Start Shopping<FaArrowCircleRight /> </Link>
+        <Link to="/shoes" className='btn'>{isAdmin ? 'Welcome Admin' : 'Start Shopping'}<FaArrowCircleRight /> </Link>
         {!isAdmin && (
           <HomePageForm handleLogin={handleLogin} error={error} />
         )}

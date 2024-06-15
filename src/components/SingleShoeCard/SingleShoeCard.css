@@ -40,8 +40,10 @@
 }
 
 .admin-shoe-buttons {
-  width: 50%;
+  width: 60%;
+  padding: 1rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 1rem;
 }
 
