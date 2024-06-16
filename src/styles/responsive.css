@@ -71,13 +71,41 @@
   .nav-bar {
     height: 12vh;
   }
+  
+  .hamburger {
+    display: block; 
+    position: relative;
+  }
 
-  .nav-bar ul {
-    display: none;
+   .nav-links {
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(0) translateY(0) scale(0);
+    transition: all 0.3s ease;
+    position: absolute;
+    bottom: 0rem;
+    right: 0;
+    box-shadow: 1px 1px 5px 1px rgba(0, 2, 121, 0.966);
+    background-color: rgba(12, 12, 56, 0.678);
+    overflow: hidden;
+  }
+
+  .nav-links.open {
+    display: flex;
+    height: 30rem; 
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0px) translateY(30rem);
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
   }
 
   .nav-bar ul a {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
   }
 
   .nav-bar-logo {
@@ -284,13 +312,13 @@
     font-size: 1.2rem;
   }
   .nav-bar {
-    height: 6vh;
+    height: 12vh;
   }
   .nav-bar ul {
-    display: none;
+    width: 80%;
   }
   .nav-bar ul a {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
   }
 
   .nav-bar-logo {
@@ -401,7 +429,7 @@
   }
 
   .Footer {
-    height: 8vh;
+    height: 12vh;
   }
 
   .copyrights {
@@ -409,7 +437,7 @@
     font-size: 1.2rem;
   }
   .nav-bar {
-    height: 6vh;
+    height: 10vh;
   }
   .nav-bar ul {
     width: 65%;
@@ -509,14 +537,14 @@
   }
 
   .Footer {
-    height: 8vh;
+    height: 12vh;
   }
 
   .copyrights {
     width: 50%;
   }
   .nav-bar {
-    height: 7vh;
+    height: 12vh;
   }
   .nav-bar ul {
     width: 50%;

@@ -1,19 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { GiSonicShoes } from "react-icons/gi";
-
+import { FaBars, FaTimes } from "react-icons/fa";
 import { useAdmin } from "../../../context/CheckAdminContext";
 
 import './NavBar.css'
 
 const NavBar = () => {
   const { isAdmin, logout } = useAdmin();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
     <>
       <nav className="nav-bar">
-        <div className="nav-bar-logo">Shoes <GiSonicShoes /></div>
-        <ul>
+        <div className="nav-bar-logo">
+          Shoes <GiSonicShoes />
+        </div>
+        <div className="hamburger" onClick={toggleMenu}>
+          {isMenuOpen ? <FaTimes /> : <FaBars />}
+        </div>
+        <ul className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
           <li>
             <NavLink to="/" className={({ isActive }) => (isActive ? 'isActive' : '')} end>
               Home
