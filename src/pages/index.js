@@ -4,6 +4,7 @@ import AddShoePage from './AddShoePage/AddShoePage';
 import NotFoundPage from './NotFoundPage/NotFoundPage';
 import ShoePage from './ShoePage/ShoePage';
 import EditPage from "./EditPage/EditPage";
+import ContactPage from './ContactPage/ContactPage';
 
 
-export { HomePage, ShoesPage, AddShoePage, NotFoundPage, ShoePage, EditPage };
+export { HomePage, ShoesPage, AddShoePage, NotFoundPage, ShoePage, EditPage, ContactPage };

@@ -3,8 +3,10 @@ import React from "react";
 import { Loader, ErrorMessage } from "../../components";
 import { useFetchShoes } from "../../context/FetchShoesContext";
 
+import {PanelTable} from "../../components";
+
 import './PanelPage.css'
-import PanelTable from "../../components/PanelTable/PanelTable";
+
 
 const PanelPage = () => {
   const { shoes, isLoading, error } = useFetchShoes();
