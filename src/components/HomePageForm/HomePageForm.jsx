@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { IoLogInOutline } from "react-icons/io5";
+
+import ICONS from '../../models/icons';
 
 import './HomePageForm.css';
 
@@ -11,7 +12,6 @@ const HomePageForm = ({ handleLogin, error }) => {
     e.preventDefault();
     handleLogin(username, password);
   };
-  
 
   const inputClass = error ? 'input-error' : '';
 
@@ -24,7 +24,7 @@ const HomePageForm = ({ handleLogin, error }) => {
           type="text"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          className={inputClass} 
+          className={inputClass}
         />
       </div>
       <div className='form-group'>
@@ -33,10 +33,10 @@ const HomePageForm = ({ handleLogin, error }) => {
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className={inputClass} 
+          className={inputClass}
         />
       </div>
-      <button type="submit" className='btn'>Login<IoLogInOutline /></button>
+      <button type="submit" className='btn'>Login <ICONS.LogIn /></button>
     </form>
   );
 };

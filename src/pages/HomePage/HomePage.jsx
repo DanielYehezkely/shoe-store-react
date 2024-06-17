@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { FaArrowCircleRight } from "react-icons/fa";
-import { GiSonicShoes } from "react-icons/gi";
 
 import { ErrorMessage, HomePageForm } from '../../components';
 import { useAdmin } from '../../context/CheckAdminContext';
 import { ADMIN } from '../../models/constants';
-
+import ICONS from '../../models/icons';
 
 import './HomePage.css';
 
@@ -32,8 +30,8 @@ const HomePage = () => {
       <div className="home-page-image2"></div>
       <main className="home-page-main">
         <h1 className="home-page-title">Welcome to Shoes </h1>
-        <GiSonicShoes className='shoes-icon' />
-        <Link to="/shoes" className='btn'>{isAdmin ? 'Welcome Admin' : 'Start Shopping'}<FaArrowCircleRight /> </Link>
+        <ICONS.Shoes className='shoes-icon' />
+        <Link to="/shoes" className='btn'>{isAdmin ? 'Welcome Admin' : 'Start Shopping'}<ICONS.ArrowRight /> </Link>
         {!isAdmin && (
           <HomePageForm handleLogin={handleLogin} error={error} />
         )}

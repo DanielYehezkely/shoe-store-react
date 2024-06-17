@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { GiSonicShoes } from "react-icons/gi";
-import { FaBars, FaTimes } from "react-icons/fa";
 
 import { useAdmin } from "../../../context/CheckAdminContext";
+import ICONS from "../../../models/icons";
 
 import './NavBar.css'
 
@@ -19,10 +18,10 @@ const NavBar = () => {
     <>
       <nav className="nav-bar">
         <div className="nav-bar-logo">
-          Shoes <GiSonicShoes />
+          Shoes <ICONS.Shoes />
         </div>
         <div className="hamburger" onClick={toggleMenu}>
-          {isMenuOpen ? <FaTimes /> : <FaBars />}
+          {isMenuOpen ? <ICONS.Bars /> : <ICONS.CloseX />}
         </div>
         <ul className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
           <li>
