@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router";
 
 import { useFetchUsers } from "../../../context/FetchUsersContext";
 import ICONS from "../../../models/icons";
@@ -10,16 +9,21 @@ import ErrorMessage from "../../ErrorMessage/ErrorMessage";
 
 import './ContactForm.css';
 
-const ContactForm = ({ onSuccess }) => {
+const ContactForm = () => {
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
-  const { addNewUserCall, isAdding, addUsersError } = useFetchUsers(); 
+  const { addNewUserCall, isAdding, addUsersError } = useFetchUsers();
+  const [localError, setLocalError] = useState(null);
+  const [isMessageSent, setIsMessageSent] = useState(false);
 
-  const navigate = useNavigate();
+  const handleSuccess = () => {
+    setIsMessageSent(true);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLocalError(null);
 
     if (!fullName.trim() || !email.trim() || !message.trim()) {
       setLocalError(FORM_INPUTS_EMPTY_MESSAGE);
@@ -33,30 +37,37 @@ const ContactForm = ({ onSuccess }) => {
     };
 
     try {
-      await addNewUserCall(newCall); 
-      onSuccess();
-      setTimeout(() => {
-        navigate('/shoes');
-      }, 5000);
+      await addNewUserCall(newCall);
+      handleSuccess();
     } catch {
+      setLocalError(addUsersError);
     }
   };
 
   return (
-    <form className="contact-form" onSubmit={handleSubmit}>
-      <h1>Get in Touch</h1>
-      {addUsersError && <ErrorMessage error={addUsersError} />}
-      <FormInput label={'FullName'} type="text" value={fullName} onChange={(e) => setFullName(e.target.value)} />
-      <FormInput label={'Email'} type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-      <FormInput label={'Write Us '} type="textarea" value={message} onChange={(e) => setMessage(e.target.value)} />
-      {isAdding ? (
-        <Loader />
-      ) : (
-        <button className="contact-form-button" type="submit">
-          Send Me Message <ICONS.MailSend />
-        </button>
-      )}
-    </form>
+    <>
+      {addUsersError ? (<ErrorMessage error={addUsersError} />) : (<form className="contact-form" onSubmit={handleSubmit}>
+        <h1>Get in Touch</h1>
+        {localError && <ErrorMessage error={localError} />}
+        {isMessageSent ? (<div className="redirect-message">
+          <h2>Thank you for writing us! We will contact you soon as possible</h2>
+        </div>) : (<>
+          <FormInput label={'FullName'} type="text" value={fullName} onChange={(e) => setFullName(e.target.value)} />
+          <FormInput label={'Email'} type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+          <FormInput label={'Write Us '} type="textarea" value={message} onChange={(e) => setMessage(e.target.value)} />
+          {isAdding ? (
+            <Loader />
+          ) : (
+            <button className="contact-form-button" type="submit">
+              Send Me Message <ICONS.MailSend />
+            </button>
+          )}
+        </>)}
+
+      </form>)}
+
+    </>
+
   );
 };
 
