@@ -1,8 +1,10 @@
 import React from "react";
-
 import { Link } from "react-router-dom";
 
-const PanelTable = ({shoes}) => {
+import './ShoesTable.css'
+
+const ShoesTable = ({shoes}) => {
+  
   return <>
     <table >
       <thead>
@@ -25,7 +27,7 @@ const PanelTable = ({shoes}) => {
             <td>{shoe.id}</td>
             <td>{shoe.info}</td>
             <td className="price">${shoe.price}</td>
-            <td><Link to={`/shoes/${shoe.id}`}><button className="btn panel-button">Edit</button></Link></td>
+            <td><Link to={`/shoes/${shoe.id}`}><button className="btn panel-edit-button">Edit</button></Link></td>
           </tr>
         ))}
       </tbody>
@@ -33,4 +35,4 @@ const PanelTable = ({shoes}) => {
   </>
 };
 
-export default PanelTable;
+export default ShoesTable;

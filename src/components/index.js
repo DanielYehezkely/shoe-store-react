@@ -9,8 +9,8 @@ import Footer from "./Layout/Footer/Footer";
 import NavBar from "./Layout/NavBar/NavBar";
 import HomePageForm from "./HomePageForm/HomePageForm";
 import ErrorMessage from "./ErrorMessage/ErrorMessage";
-import PanelTable from './PanelTable/PanelTable'
+import ShoesTable from "./Panel/ShoesTable/ShoesTable";
 import ContactForm from "./Contact/Contact";
 
 
-export { DeleteButton, EditButton, ErrorMessage, Footer, HomePageForm, Layout, Loader, NavBar, ShoeCard, ShoeGenericForm, SingleShoeCard, PanelTable, ContactForm }
+export { DeleteButton, EditButton, ErrorMessage, Footer, HomePageForm, Layout, Loader, NavBar, ShoeCard, ShoeGenericForm, SingleShoeCard, ShoesTable, ContactForm }

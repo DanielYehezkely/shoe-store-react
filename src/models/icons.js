@@ -2,7 +2,7 @@ import { RiMailSendLine } from "react-icons/ri";
 import { MdEmail } from "react-icons/md";
 import { FaMapLocationDot } from "react-icons/fa6";
 import { GiSonicShoes } from "react-icons/gi";
-import { FaArrowCircleRight, FaBars, FaTimes, FaGithub, FaPhoneSquare } from "react-icons/fa";
+import { FaArrowCircleRight, FaBars, FaTimes, FaGithub, FaPhoneSquare, FaPlus, FaMinus } from "react-icons/fa";
 import { IoLogInOutline, IoLogoLinkedin } from "react-icons/io5";
 import { SiGmail } from "react-icons/si";
 
@@ -20,6 +20,8 @@ const ICONS = {
   GitHub: FaGithub,
   LinkedIn: IoLogoLinkedin,
   Gmail: SiGmail,
+  Plus: FaPlus,
+  Minus: FaMinus,
 };
 
 export default ICONS;

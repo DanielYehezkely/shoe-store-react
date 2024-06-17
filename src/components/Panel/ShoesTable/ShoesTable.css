@@ -1,0 +1,48 @@
+table {
+  background: rgba(195, 231, 241, 0.521);
+  border-radius: 0.25em;
+  border-collapse: collapse;
+  width: 60%;
+  box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px,
+    rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+}
+th {
+  border-bottom: 1px solid #364043;
+  color: #000000;
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding: 0.5em 1em;
+  text-align: center;
+}
+td {
+  text-align: center;
+  font-weight: 400;
+  padding: 0.65em 1em;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+tbody tr {
+  color: black;
+  transition: all 0.25s ease;
+}
+tbody tr:hover {
+  background: #014055;
+  color: white;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+
+.name {
+  font-size: 1.4rem;
+}
+
+.panel-edit-button {
+  background-color: #6722e6;
+  border: 1px solid #ffffff;
+  box-shadow: 0px 6px 0px #3800d3;
+  width: auto;
+}
