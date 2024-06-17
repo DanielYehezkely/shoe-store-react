@@ -1,0 +1,33 @@
+
+.contact-form {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contact-form h1{
+  font-size: 4rem;
+  font-family: 'HeadlineFont', sans-serif;
+}
+
+.contact-form-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  border: none;
+  border-radius: 1rem;
+  background-color: #f5f77b;
+  box-shadow: 1px 1px 5px 1px rgba(100, 100, 100, 0.411);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-form-button:hover {
+  background-color: #e4e708;
+  transform: scale(1.07);
+}

@@ -9,6 +9,8 @@ import FormInput from "./FormInput/FormInput";
 import Loader from "../../components/Loader/Loader";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 
+import { FORM_INPUTS_EMPTY } from "../../models/constants";
+
 import './ShoeGenericForm.css';
 
 const ShoeGenericForm = ({ shoe }) => {
@@ -46,7 +48,7 @@ const ShoeGenericForm = ({ shoe }) => {
     setError(null);
 
     if (!name.trim() || !id.trim() || !info.trim() || !price.trim() || !image.trim()) {
-      setError("All fields are required.");
+      setError(FORM_INPUTS_EMPTY);
       return;
     }
 

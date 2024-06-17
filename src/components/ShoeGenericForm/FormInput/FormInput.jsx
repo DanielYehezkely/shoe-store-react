@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './FormInput.css';
 
 const FormInput = ({ label, id, type = "text", value, onChange, className }) => (

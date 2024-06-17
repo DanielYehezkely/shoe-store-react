@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { GiSonicShoes } from "react-icons/gi";
 import { FaBars, FaTimes } from "react-icons/fa";
+
 import { useAdmin } from "../../../context/CheckAdminContext";
 
 import './NavBar.css'
@@ -34,11 +35,13 @@ const NavBar = () => {
               Shoes
             </NavLink>
           </li>
-          <li>
-            <NavLink to="/shoes/contact" className={({ isActive }) => (isActive ? 'isActive' : '')} end>
-              Contact
-            </NavLink>
-          </li>
+          {!isAdmin && (
+            <li>
+              <NavLink to="/shoes/contact" className={({ isActive }) => (isActive ? 'isActive' : '')} end>
+                Contact
+              </NavLink>
+            </li>
+          )}
           {isAdmin && (
             <>
               <li>
@@ -65,4 +68,5 @@ const NavBar = () => {
 };
 
 export default NavBar;
+
 

@@ -1,0 +1,31 @@
+.Contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  height: 100%;
+  border-radius: 1rem;
+  padding: 2rem;
+  gap: 1rem;
+}
+
+.contact-image-container{
+  height: 100%;
+  width: 60%;
+}
+
+.contact-image {
+  width: 100%;
+  border-radius: 50%;
+  object-fit: contain;
+}
+
+.redirect-message {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.redirect-message h2 {
+  font-size: 3rem;
+  color: #4caf50; 
+}
