@@ -5,7 +5,7 @@ import { updateShoe, addShoe } from "../api/shoeApi";
 
 import { useFetchShoes } from "../context/FetchShoesContext";
 import { validateImageUrl } from "../utils/validateImageUrl";
-import { FORM_INPUTS_EMPTY } from "../models/constants";
+import { FORM_INPUTS_EMPTY_MESSAGE } from "../models/constants";
 
 const useShoeForm = (initialShoe) => {
   const [name, setName] = useState("");
@@ -41,7 +41,7 @@ const useShoeForm = (initialShoe) => {
     setError(null);
 
     if (!name.trim() || !id.trim() || !info.trim() || !price.trim() || !image.trim()) {
-      setError(FORM_INPUTS_EMPTY);
+      setError(FORM_INPUTS_EMPTY_MESSAGE);
       return;
     }
 

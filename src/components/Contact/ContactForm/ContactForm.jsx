@@ -3,7 +3,7 @@ import { useNavigate } from "react-router";
 
 import { useFetchUsers } from "../../../context/FetchUsersContext";
 import ICONS from "../../../models/icons";
-import { FORM_INPUTS_EMPTY } from "../../../models/constants";
+import { FORM_INPUTS_EMPTY_MESSAGE } from "../../../models/constants";
 import FormInput from "../../ShoeGenericForm/FormInput/FormInput";
 import Loader from "../../Loader/Loader";
 import ErrorMessage from "../../ErrorMessage/ErrorMessage";
@@ -22,7 +22,7 @@ const ContactForm = ({ onSuccess }) => {
     e.preventDefault();
 
     if (!fullName.trim() || !email.trim() || !message.trim()) {
-      setLocalError(FORM_INPUTS_EMPTY);
+      setLocalError(FORM_INPUTS_EMPTY_MESSAGE);
       return;
     }
 

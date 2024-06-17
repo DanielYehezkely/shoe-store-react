@@ -1,3 +1,4 @@
+/* ========================================= Phone - Responsive ======================================= */
 @media only screen and (max-width: 575.98px) {
   .home-page-title {
     font-size: 4rem;
@@ -244,6 +245,8 @@
   }
 }
 
+/* ========================================= Bigger Phone - Responsive ======================================= */
+
 @media only screen and (min-width: 576px) and (max-width: 767.98px) {
   .home-page-title {
     font-size: 6rem;
@@ -375,6 +378,8 @@
   }
 }
 
+/* ========================================= Tablet - Responsive ======================================= */
+
 @media only screen and (min-width: 768px) and (max-width: 991.98px) {
   .home-page-title {
     font-size: 5rem;
@@ -500,6 +505,8 @@
   }
 }
 
+/* ========================================= normal/laptop- screen - Responsive ======================================= */
+
 @media only screen and (min-width: 992px) and (max-width: 1480px) {
   .home-page-title {
     font-size: 6rem;
@@ -568,6 +575,8 @@
     width: 80%;
   }
 }
+
+/* ========================================= big pc screen - responsive ======================================= */
 
 @media only screen and (min-width: 1700px) {
   .home-page-title {

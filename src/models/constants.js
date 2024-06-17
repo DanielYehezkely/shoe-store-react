@@ -11,9 +11,14 @@ export const LINKEDIN_LINK = 'https://www.linkedin.com/in/daniel-yehezkely/';
 export const GMAIL = 'kegezgaming@gmail.com';
 
 
-export const GET_SHOES_ERROR = "Unable to fetch shoes details.";
-export const GET_SHOE_ERROR = "Unable to fetch shoe details.";
-export const POST_SHOE_ERROR = "Unable to add shoe.";
-export const PUT_SHOE_ERROR = "Unable to update shoe.";
-export const DELETE_SHOE_ERROR = "Unable to delete shoe.";
-export const FORM_INPUTS_EMPTY = "All fields are required."
+export const GET_SHOES_ERROR_MESSAGE = "Unable to fetch shoes details.";
+export const GET_SHOE_ERROR_MESSAGE = "Unable to fetch shoe details.";
+export const POST_SHOE_ERROR_MESSAGE = "Unable to add shoe.";
+export const PUT_SHOE_ERROR_MESSAGE = "Unable to update shoe.";
+export const DELETE_SHOE_ERROR_MESSAGE = "Unable to delete shoe.";
+
+export const FORM_INPUTS_EMPTY_MESSAGE = "All fields are required."
+
+export const GET_USERS_ERROR_MESSAGE = "Unable to fetch users details."
+export const POST_USERS_ERROR_MESSAGE = "Unable to add user call."
+export const DELETE_USERS_ERROR_MESSAGE = "Unable to delete user call."
