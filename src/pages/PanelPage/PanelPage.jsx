@@ -2,9 +2,10 @@ import React, { useState } from "react";
 
 import { Loader, ErrorMessage, ShoesTable } from "../../components";
 import { useFetchShoes } from "../../context/FetchShoesContext";
+import { useFetchUsers } from "../../context/FetchUsersContext";
 import ICONS from "../../models/icons";
 import UsersTable from "../../components/Panel/UsersTable/UsersTable";
-import useFetchUsersCalls from "../../hooks/useFetchUsers";
+
 
 import './PanelPage.css'
 
@@ -13,7 +14,7 @@ const PanelPage = () => {
   const [showUsersTable, setShowUsersTable] = useState(false);
 
   const { shoes, isLoading, error } = useFetchShoes();
-  const { usersCalls, isLoadingUsers, errorMessage } = useFetchUsersCalls();
+  const { usersCalls, isLoadingUsers, usersError } = useFetchUsers();
 
   const handleShoesClick = () => {
     setShowShoesTable((prev) => !prev);
@@ -38,7 +39,7 @@ const PanelPage = () => {
             {isLoading ? (
               <Loader />
             ) : error ? (
-              <ErrorMessage error={shoesError.message} />
+              <ErrorMessage error={error.message} />
             ) : (
               <ShoesTable shoes={shoes} />
             )}
@@ -48,10 +49,10 @@ const PanelPage = () => {
           <>
             {isLoadingUsers ? (
               <Loader />
-            ) : errorMessage ? (
+            ) : usersError ? (
               <ErrorMessage error={usersError} />
             ) : (
-              <UsersTable users={usersCalls} />
+              <UsersTable users={usersCalls}  />
             )}
           </>
         )}

@@ -1,31 +1,28 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 
+import { useFetchUsers } from "../../../context/FetchUsersContext";
 import ICONS from "../../../models/icons";
-import {addUserCall} from '../../../api/usersApi';
 import { FORM_INPUTS_EMPTY } from "../../../models/constants";
-
 import FormInput from "../../ShoeGenericForm/FormInput/FormInput";
 import Loader from "../../Loader/Loader";
 import ErrorMessage from "../../ErrorMessage/ErrorMessage";
 
-import './ContactForm.css'; 
+import './ContactForm.css';
 
 const ContactForm = ({ onSuccess }) => {
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
-  const [error, setError] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
+  const { addNewUserCall, isAdding, addUsersError } = useFetchUsers(); 
 
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError(null);
 
     if (!fullName.trim() || !email.trim() || !message.trim()) {
-      setError(FORM_INPUTS_EMPTY)
+      setLocalError(FORM_INPUTS_EMPTY);
       return;
     }
 
@@ -33,32 +30,29 @@ const ContactForm = ({ onSuccess }) => {
       fullName,
       message,
       email
-    }
-    setIsLoading(true);
+    };
+
     try {
-      await addUserCall(newCall);
-      onSuccess(); 
+      await addNewUserCall(newCall); 
+      onSuccess();
       setTimeout(() => {
         navigate('/shoes');
       }, 5000);
-    } catch (error) {
-      setError(error.message)
-    } finally {
-      setIsLoading(false);
+    } catch {
     }
   };
 
   return (
     <form className="contact-form" onSubmit={handleSubmit}>
       <h1>Get in Touch</h1>
-      {error && <ErrorMessage error={error} />}
+      {addUsersError && <ErrorMessage error={addUsersError} />}
       <FormInput label={'FullName'} type="text" value={fullName} onChange={(e) => setFullName(e.target.value)} />
       <FormInput label={'Email'} type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
       <FormInput label={'Write Us '} type="textarea" value={message} onChange={(e) => setMessage(e.target.value)} />
-      {isLoading ? (
+      {isAdding ? (
         <Loader />
       ) : (
-          <button className="contact-form-button" type="submit">
+        <button className="contact-form-button" type="submit">
           Send Me Message <ICONS.MailSend />
         </button>
       )}

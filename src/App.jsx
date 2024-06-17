@@ -6,6 +6,7 @@ import { Layout } from "./components";
 import { AdminProvider } from "./context/CheckAdminContext";
 import { FetchShoesProvider } from "./context/FetchShoesContext";
 import PanelPage from "./pages/PanelPage/PanelPage";
+import { FetchUsersProvider } from "./context/FetchUsersContext";
 
 
 
@@ -33,7 +34,7 @@ function App() {
           element: <AddShoePage />,
         },
         {
-          path: ':shoeId/edit', 
+          path: ':shoeId/edit',
           element: <EditPage />,
         },
         {
@@ -42,7 +43,7 @@ function App() {
         },
         {
           path: 'contact',
-          element: <ContactPage/>,
+          element: <ContactPage />,
         },
       ],
     },
@@ -55,7 +56,9 @@ function App() {
   return (
     <AdminProvider>
       <FetchShoesProvider>
-        <RouterProvider router={router} />
+        <FetchUsersProvider>
+          <RouterProvider router={router} />
+        </FetchUsersProvider>
       </FetchShoesProvider>
     </AdminProvider>
   );

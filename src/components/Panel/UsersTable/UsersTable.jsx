@@ -1,11 +1,18 @@
 import React from "react";
 
+import ErrorMessage from "../../ErrorMessage/ErrorMessage";
+import Loader from "../../Loader/Loader";
+import { useFetchUsers } from "../../../context/FetchUsersContext";
+
 import './UsersTable.css'
 
-const UsersTable = ({users}) => {
+const UsersTable = ({ users }) => {
+
+  const { deleteUsersError, isDeleting, deleteUserCall } = useFetchUsers();
 
   return <>
-  
+    {isDeleting && <Loader/>}
+    {deleteUsersError && <ErrorMessage error={deleteUsersError}/>}
     <table >
       <thead>
         <tr>
@@ -21,7 +28,7 @@ const UsersTable = ({users}) => {
             <td className="name">{user.fullName}</td>
             <td>{user.email}</td>
             <td>{user.message}</td>
-            <td><button className="btn panel-edit-button">Approached</button></td>
+            <td><button className="btn panel-approached-button" onClick={() => deleteUserCall(user.id)}>Approached</button></td>
           </tr>
         ))}
       </tbody>

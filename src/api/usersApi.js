@@ -18,3 +18,11 @@ export const getUsersCalls = async () => {
     throw new Error('couldnt get the users calls.');
   }
 };
+
+export const deleteUserCallObj = async (userId) => {
+  try {
+    const response = await axios.delete(`${USERS_URL}/${userId}`);
+  } catch (error) {
+    throw new Error('Couldnt delete user call.')
+  }
+};
