@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 
-import { deleteShoe } from "../../../api/api";
+import { deleteShoe } from "../../../api/shoeApi";
 import { useFetchShoes } from "../../../context/FetchShoesContext";
 
 import Loader from "../../Loader/Loader";

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { updateShoe, addShoe } from "../../api/api";
+import { updateShoe, addShoe } from "../../api/shoeApi";
 import { useFetchShoes } from "../../context/FetchShoesContext";
 import { validateImageUrl } from "../../utils/validateImageUrl";
 

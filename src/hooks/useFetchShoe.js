@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import { getShoeById } from "../api/api"; 
+import { getShoeById } from "../api/shoeApi"; 
 
 const useFetchShoe = (shoeId) => {
   

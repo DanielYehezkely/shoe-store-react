@@ -1,6 +1,6 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
 
-import {getShoes} from '../api/api'
+import { getShoes } from '../api/shoeApi'
 
 const FetchShoesContext = createContext();
 
