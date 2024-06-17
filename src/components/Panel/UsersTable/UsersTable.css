@@ -2,8 +2,28 @@
   background-color: #6722e6;
   border: 1px solid #ffffff;
   box-shadow: 0px 6px 0px #3800d3;
-  font-size: 100%;
-  padding: 0.5rem;
+  font-size: 1.2rem; 
+  padding: 1rem;
   margin: 1rem;
-  width: auto;
+  width: auto; 
+  max-width: 100%; 
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+}
+
+.panel-approached-button:hover {
+  transform: scale(1.1);
+  background-color: #8052d4;
+  border: 1px solid #ffffff;
+  box-shadow: 0px 6px 0px #3800d3;
+}
+
+.no-users-message {
+  font-size: 3rem;
+  color: #3800d3;
 }
