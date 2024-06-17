@@ -1,26 +1,32 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 import { ShoeGenericForm, ErrorMessage, Loader } from "../../components";
 
-import useFetchShoe from "../../hooks/useFetchShoe";
-
 import './EditPage.css';
+import { useFetchShoes } from "../../context/FetchShoesContext";
 
 const EditPage = () => {
 
   const { shoeId } = useParams();
-  const { shoe, isLoading, error } = useFetchShoe(shoeId);
+  const { singleShoe, isSingleShoeLoading, singleShoeError, fetchShoeById } = useFetchShoes();
+
+  useEffect(() => {
+    if (shoeId) {
+      fetchShoeById(shoeId);
+    }
+
+  }, [shoeId]);
 
 
   return (
     <div className="EditPage">
-      {isLoading ? (
+      {isSingleShoeLoading ? (
         <Loader />
-      ) : error ? (
+      ) : singleShoeError ? (
         <ErrorMessage message={error} />
       ) : (
-        <ShoeGenericForm shoe={shoe} />
+        <ShoeGenericForm shoe={singleShoe} />
       )}
     </div>
   );

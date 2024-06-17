@@ -1,11 +1,10 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
-
-import { getShoeById, getShoes } from '../api/shoeApi'
+import { getShoes, getShoeById, addShoe, updateShoe } from '../api/shoeApi';
 
 const FetchShoesContext = createContext();
 
 export const FetchShoesProvider = ({ children }) => {
-
+  
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [shoes, setShoes] = useState([]);
@@ -15,21 +14,17 @@ export const FetchShoesProvider = ({ children }) => {
 
   const fetchShoes = async () => {
     setError(null);
+    setIsLoading(true);
     try {
-      const shoes = await getShoes();
-      setShoes(shoes)
+      const shoesData = await getShoes();
+      setShoes(shoesData);
     } catch (error) {
       setError(error.message);
     } finally {
       setIsLoading(false);
     }
-  }
-  
-  useEffect(() => {
-  
-    fetchShoes();
-  }, []);
-  
+  };
+
   const fetchShoeById = async (shoeId) => {
     setSingleShoeError(null);
     setIsSingleShoeLoading(true);
@@ -43,14 +38,44 @@ export const FetchShoesProvider = ({ children }) => {
     }
   };
 
+  const addNewShoe = async (shoeData) => {
+    try {
+      await addShoe(shoeData);
+      fetchShoes(); 
+    } catch (error) {
+      throw new Error(error.message); 
+    }
+  };
 
+  const updateExistingShoe = async (shoeData) => {
+    try {
+      await updateShoe(shoeData);
+      fetchShoes(); 
+    } catch (error) {
+      throw new Error(error.message);
+    }
+  };
+
+  useEffect(() => {
+    fetchShoes();
+  }, []);
 
   return (
-    <FetchShoesContext.Provider value={{error, isLoading, shoes, fetchShoes, fetchShoeById, isSingleShoeLoading, singleShoeError, singleShoe}}>
+    <FetchShoesContext.Provider value={{
+      error,
+      isLoading,
+      shoes,
+      fetchShoes,
+      fetchShoeById,
+      isSingleShoeLoading,
+      singleShoeError,
+      singleShoe,
+      addNewShoe,
+      updateExistingShoe,
+    }}>
       {children}
     </FetchShoesContext.Provider>
   );
 };
-
 
 export const useFetchShoes = () => useContext(FetchShoesContext);

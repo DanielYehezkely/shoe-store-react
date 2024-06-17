@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { updateShoe, addShoe } from "../api/shoeApi";
-
 import { useFetchShoes } from "../context/FetchShoesContext";
 import { validateImageUrl } from "../utils/validateImageUrl";
 import { FORM_INPUTS_EMPTY_MESSAGE } from "../models/constants";
@@ -13,12 +11,12 @@ const useShoeForm = (initialShoe) => {
   const [id, setId] = useState("");
   const [price, setPrice] = useState("");
   const [image, setImage] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [invalidImage, setInvalidImage] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
+  const { addNewShoe, updateExistingShoe } = useFetchShoes();
   const navigate = useNavigate();
-  const { fetchShoes } = useFetchShoes();
 
   useEffect(() => {
     if (initialShoe) {
@@ -51,31 +49,16 @@ const useShoeForm = (initialShoe) => {
     }
 
     setIsLoading(true);
+    const shoeData = { name, id, price, info, image };
 
     try {
       if (initialShoe) {
-        const updatedShoe = {
-          ...initialShoe,
-          name,
-          id,
-          price,
-          info,
-          image
-        };
-        await updateShoe(updatedShoe);
+        await updateExistingShoe(shoeData);
         navigate(`/shoes/${initialShoe.id}`);
       } else {
-        const newShoe = {
-          name,
-          id,
-          price,
-          info,
-          image
-        };
-        await addShoe(newShoe);
-        navigate(`/shoes`);
+        await addNewShoe(shoeData);
+        navigate('/shoes');
       }
-      fetchShoes();
     } catch (error) {
       setError(error.message);
     } finally {
@@ -103,3 +86,4 @@ const useShoeForm = (initialShoe) => {
 };
 
 export default useShoeForm;
+
