@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 
-import { Loader, ErrorMessage, ShoesTable } from "../../components";
+import { Loader, ErrorMessage, ShoesTable, UsersTable, PanelButton } from "../../components";
 import { useFetchShoes } from "../../context/FetchShoesContext";
 import { useFetchUsers } from "../../context/FetchUsersContext";
-import ICONS from "../../models/icons";
-import UsersTable from "../../components/Panel/UsersTable/UsersTable";
-
 
 import './PanelPage.css'
 
@@ -26,12 +23,8 @@ const PanelPage = () => {
   return (
     <div className='PanelPage'>
       <div className="panel-buttons-container">
-        <button className="panel-button" role="button" onClick={handleShoesClick}>
-          {showShoesTable ? 'Close Shoes Table' : 'Show Shoes Table'} {showShoesTable ? <ICONS.Minus /> : <ICONS.Plus />}
-        </button>
-        <button className="panel-button" role="button" onClick={handleUsersClick}>
-          {showUsersTable ? 'Close Users Table' : 'Show Users Table'} {showUsersTable ? <ICONS.Minus /> : <ICONS.Plus />}
-        </button>
+        <PanelButton booleanState={showShoesTable} handleClick={handleShoesClick} label={'shoes'}/>
+        <PanelButton booleanState={showUsersTable} handleClick={handleUsersClick} label={'users'}/>
       </div>
       <div className="panel-page-container">
         {showShoesTable && (

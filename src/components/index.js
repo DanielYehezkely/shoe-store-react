@@ -10,7 +10,9 @@ import NavBar from "./Layout/NavBar/NavBar";
 import HomePageForm from "./HomePageForm/HomePageForm";
 import ErrorMessage from "./ErrorMessage/ErrorMessage";
 import ShoesTable from "./Panel/ShoesTable/ShoesTable";
+import UsersTable from "./Panel/UsersTable/UsersTable";
+import PanelButton from "./Panel/PanelButton/PanelButton";
 import ContactForm from "./Contact/Contact";
 
 
-export { DeleteButton, EditButton, ErrorMessage, Footer, HomePageForm, Layout, Loader, NavBar, ShoeCard, ShoeGenericForm, SingleShoeCard, ShoesTable, ContactForm }
+export { DeleteButton, EditButton, ErrorMessage, Footer, HomePageForm, Layout, Loader, NavBar, ShoeCard, ShoeGenericForm, SingleShoeCard, ShoesTable, ContactForm, UsersTable, PanelButton }

@@ -1,94 +1,28 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-
-import { updateShoe, addShoe } from "../../api/shoeApi";
-import { useFetchShoes } from "../../context/FetchShoesContext";
-import { validateImageUrl } from "../../utils/validateImageUrl";
-
-import FormInput from "./FormInput/FormInput";
-import Loader from "../../components/Loader/Loader";
-import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
-
-import { FORM_INPUTS_EMPTY } from "../../models/constants";
+import React from "react";
+import useShoeForm from "../../hooks/useShoeForm";
+import FormInput from "../ShoeGenericForm/FormInput/FormInput"; 
+import Loader from "../Loader/Loader";
+import ErrorMessage from "../ErrorMessage/ErrorMessage";
 
 import './ShoeGenericForm.css';
 
 const ShoeGenericForm = ({ shoe }) => {
-
-  const [name, setName] = useState("");
-  const [info, setInfo] = useState("");
-  const [id, setId] = useState("");
-  const [price, setPrice] = useState("");
-  const [image, setImage] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
-  const [invalidImage, setInvalidImage] = useState(false);
-
-  const navigate = useNavigate();
-  const { fetchShoes } = useFetchShoes();
-
-  useEffect(() => {
-    if (shoe) {
-      setName(shoe.name);
-      setPrice(shoe.price);
-      setImage(shoe.image);
-      setInfo(shoe.info);
-      setId(shoe.id);
-    }
-  }, [shoe]);
-
-  const handleImageChange = (e) => {
-    const url = e.target.value;
-    setImage(url);
-    setInvalidImage(!validateImageUrl(url)); 
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError(null);
-
-    if (!name.trim() || !id.trim() || !info.trim() || !price.trim() || !image.trim()) {
-      setError(FORM_INPUTS_EMPTY);
-      return;
-    }
-
-    if (invalidImage) {
-      setError("Invalid image URL.");
-      return;
-    }
-
-    setIsLoading(true);
-
-    try {
-      if (shoe) {
-        const updatedShoe = {
-          ...shoe,
-          name,
-          id,
-          price,
-          info,
-          image
-        };
-        await updateShoe(updatedShoe);
-        navigate(`/shoes/${shoe.id}`);
-      } else {
-        const newShoe = {
-          name,
-          id,
-          price,
-          info,
-          image
-        };
-        await addShoe(newShoe);
-        navigate(`/shoes`);
-      }
-      fetchShoes();
-    } catch (error) {
-      setError(error.message);
-    } finally {
-      setIsLoading(false);
-    }
-  };
+  const {
+    name,
+    setName,
+    info,
+    setInfo,
+    id,
+    setId,
+    price,
+    setPrice,
+    image,
+    isLoading,
+    error,
+    invalidImage,
+    handleImageChange,
+    handleSubmit,
+  } = useShoeForm(shoe);
 
   return (
     <form className="ShoeGenericForm" onSubmit={handleSubmit}>
@@ -127,7 +61,7 @@ const ShoeGenericForm = ({ shoe }) => {
           id="shoe-image"
           value={image}
           onChange={handleImageChange}
-          className={invalidImage ? 'invalid' : ''} 
+          className={invalidImage ? 'invalid' : ''}
         />
         {invalidImage && <p className="error-text">Please provide a valid image URL.</p>}
       </div>
@@ -139,4 +73,3 @@ const ShoeGenericForm = ({ shoe }) => {
 };
 
 export default ShoeGenericForm;
-
