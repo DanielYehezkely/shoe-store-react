@@ -2,31 +2,37 @@ import React, { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
 import { Loader, SingleShoeCard } from "../../components";
-
-import useFetchShoe from "../../hooks/useFetchShoe";
+import { useFetchShoes } from "../../context/FetchShoesContext";
 
 import './ShoePage.css';
 
 const ShoePage = () => {
   const { shoeId } = useParams(); 
-  const { shoe, isLoading, error } = useFetchShoe(shoeId);
+  const { singleShoe, isSingleShoeLoading, singleShoeError, fetchShoeById } = useFetchShoes();
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (error) {
+    if (singleShoeError) {
       navigate('/not-found');
     }
-  }, [error, navigate]);
+  }, [singleShoeError, navigate]);
+
+  useEffect(() => {
+    if (shoeId) {
+      fetchShoeById(shoeId);
+    }
+    
+  }, [shoeId]);
 
   return (
     <div className="ShoePage">
-      {isLoading ? (
+      {isSingleShoeLoading ? (
         <Loader />
       ) : (
-        shoe ? (
-          <SingleShoeCard shoe={shoe} />
+        singleShoe ? (
+          <SingleShoeCard shoe={singleShoe} />
         ) : (
-          <p>{error}</p>
+          <p>{singleShoeError}</p>
         )
       )}
     </div>
