@@ -1,4 +1,4 @@
-# Shoe Store Management Application <img src="/assets/icons/favicon.ico" alt="App Icon" width="50" height="50">
+# Shoe Store Management Application <img src="/public/assets/icons/favicon.ico" alt="App Icon" width="50" height="50">
 
 | Username       | Password    |
 | -------------- | ----------- |
@@ -244,34 +244,34 @@ Visit `http://localhost:3000`
 ## Admin Screenshots
 
 1. **Home Page**
-![Home Page](/assets/readme-images/readme-homePage-image.png)
+![Home Page](/public/assets/readme-images/readme-homePage-image.png)
 ***
 2. **Shoes Page**
-![Shop Page](/assets/readme-images/readme-admin-shoesPage.png)
+![Shop Page](/public/assets/readme-images/readme-admin-shoesPage.png)
 ***
 3. **Shoe Details Page**
-![Shoe Details Page](/assets/readme-images/readme-admin-singleShoePage.png)
+![Shoe Details Page](/public/assets/readme-images/readme-admin-singleShoePage.png)
 ***
 4. **Edit Page**
-![Contact Page](/assets/readme-images/readme-admin-editShoePage.png)
+![Contact Page](/public/assets/readme-images/readme-admin-editShoePage.png)
 ***
 5. **Add Shoe Page**
-![Admin Management Panel](/assets/readme-images/readme-admin-addShoePage.png)
+![Admin Management Panel](/public/assets/readme-images/readme-admin-addShoePage.png)
 ***
 6. **Admin Panel Page**
-![Admin Management Panel](/assets/readme-images/readme-admin-panelPage.png)
+![Admin Management Panel](/public/assets/readme-images/readme-admin-panelPage.png)
 ---
 
 ## User Screenshots
 
 1. **Users Shoes Page**
-![Shop Page](/assets/readme-images/readme-users-shoesPage.png)
+![Shop Page](/public/assets/readme-images/readme-users-shoesPage.png)
 ***
 2. **Users Shoe Details PAge**
-![Shoe Details Page](/assets/readme-images/readme-users-singleShoePage.png)
+![Shoe Details Page](/public/assets/readme-images/readme-users-singleShoePage.png)
 ***
 3. **Contact Page**
-![Contact Page](/assets/readme-images/readme-users-contactPage.png)
+![Contact Page](/public/assets/readme-images/readme-users-contactPage.png)
 ***
 
 
