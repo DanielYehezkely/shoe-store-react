@@ -1,6 +1,6 @@
 .HomePage {
   width: 100%;
-  height: 100vh;
+  height: 100vh; /* changed here form 100%- to check responsive phone*/
   display: flex;
   align-items: center;
   justify-content: center;
