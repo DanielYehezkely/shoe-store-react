@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 
-import { deleteShoe } from "../../../api/shoeApi";
 import { useFetchShoes } from "../../../context/FetchShoesContext";
 
 import Loader from "../../Loader/Loader";
@@ -12,15 +11,14 @@ const DeleteButton = ({ shoeId }) => {
 
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  const { fetchShoes } = useFetchShoes();
+  const { deleteExistingShoe } = useFetchShoes();
   const navigate = useNavigate();
 
   const handleDelete = async () => {
     setError(null);
     setIsLoading(true);
     try {
-      await deleteShoe(shoeId); 
-      fetchShoes();
+      await deleteExistingShoe(shoeId); 
       navigate('/shoes');
     } catch (error) {
       setError(error);

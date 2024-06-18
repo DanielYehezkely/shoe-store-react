@@ -11,8 +11,8 @@ const useShoeForm = (initialShoe) => {
   const [id, setId] = useState("");
   const [price, setPrice] = useState("");
   const [image, setImage] = useState("");
-  const [error, setError] = useState(null);
   const [invalidImage, setInvalidImage] = useState(false);
+  const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
   const { addNewShoe, updateExistingShoe } = useFetchShoes();

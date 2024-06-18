@@ -1,5 +1,5 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
-import { getShoes, getShoeById, addShoe, updateShoe } from '../api/shoeApi';
+import { getShoes, getShoeById, addShoe, updateShoe, deleteShoe } from '../api/shoeApi';
 
 const FetchShoesContext = createContext();
 
@@ -56,6 +56,19 @@ export const FetchShoesProvider = ({ children }) => {
     }
   };
 
+  const deleteExistingShoe = async (shoeId) => {
+    setError(null);
+    setIsLoading(true);
+    try {
+      await deleteShoe(shoeId);
+      fetchShoes();
+    } catch (error) {
+      setError(error.message);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   useEffect(() => {
     fetchShoes();
   }, []);
@@ -72,6 +85,7 @@ export const FetchShoesProvider = ({ children }) => {
       singleShoe,
       addNewShoe,
       updateExistingShoe,
+      deleteExistingShoe
     }}>
       {children}
     </FetchShoesContext.Provider>
