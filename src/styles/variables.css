@@ -1,0 +1,23 @@
+:root {
+  --transition: all 0.3s ease;
+
+  --default-button-bgc: #e67e22;
+  --default-button-border: #f39c12;
+  --default-button-box-shadow: #d35400;
+
+  --admin-panel-btns-color: #177acc;
+  --admin-tables-btns-bgc: #6722e6;
+  --admin-tables-btns-border-color: #ffffff;
+  --admin-tables-btns-box-shadow-color: #3800d3;
+
+  --admin-shoes-page-btn-bgc: #2e2e2e;
+  --admin-shoes-page-btn-border: #e6e4e4;
+  --admin-shoes-page-btn-box-shadow: #666666;
+
+  --unique-font-family: "HeadlineFont", sans-serif;
+
+  --social-links-default-color: #000;
+
+}
+
+

@@ -42,9 +42,9 @@
 }
 
 .icon-link {
-  color: #000;
+  color: var(--social-links-default-color);
   cursor: pointer;
-  transition: color 0.3s;
+  transition: var(--transition);
 }
 
 .github-link:hover {

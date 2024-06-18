@@ -7,7 +7,7 @@
 }
 
 .HomePage h1 {
-  font-family: "HeadlineFont", sans-serif;
+  font-family: var(--unique-font-family);
 }
 
 .home-page-title {
@@ -57,14 +57,14 @@
   color: white;
   width: 30%;
   font-size: 17px;
-  background-color: #e67e22;
-  border: 1px solid #f39c12;
+  background-color: var(--default-button-bgc);
+  border: 1px solid var(--default-button-border);
   border-radius: 5px;
   cursor: pointer;
   padding: 1rem 1.5rem;
   white-space: nowrap;
-  box-shadow: 0px 6px 0px #d35400;
-  transition: all 0.3s;
+  box-shadow: 0px 6px 0px var(--default-button-box-shadow);
+  transition: var(--transition);
   display: flex;
   align-items: center;
   justify-content: center;

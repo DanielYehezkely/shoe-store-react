@@ -23,7 +23,7 @@
 .nav-bar ul li a {
  text-decoration: none; 
  color: white;
- transition: all 0.3s ease;
+ transition: var(--transition);
  padding: 1rem;
  border-radius: 1rem;
 }
@@ -34,7 +34,7 @@
 .nav-bar-logo{
   font-size: 4.5rem;
   color: white;
-  font-family: 'HeadlineFont', sans-serif;
+  font-family: var(--unique-font-family);
   cursor: pointer;
   display: flex;
   align-items: center;

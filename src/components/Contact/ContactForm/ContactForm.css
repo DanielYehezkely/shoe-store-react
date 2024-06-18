@@ -11,7 +11,7 @@
 
 .contact-form h1{
   font-size: 6rem;
-  font-family: 'HeadlineFont', sans-serif;
+  font-family: var(--unique-font-family);
 }
 
 .contact-form-button {
@@ -24,7 +24,7 @@
   background-color: #f5f77b;
   box-shadow: 1px 1px 5px 1px rgba(100, 100, 100, 0.411);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: var(--transition);
 }
 
 .contact-form-button:hover {

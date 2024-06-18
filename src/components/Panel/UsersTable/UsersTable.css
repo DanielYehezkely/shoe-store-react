@@ -10,7 +10,7 @@
   color: white;
   border-radius: 5px;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: var(--transition);
   display: flex;
   align-items: center;
   justify-content: center; 
@@ -19,8 +19,6 @@
 .panel-approached-button:hover {
   transform: scale(1.1);
   background-color: #8052d4;
-  border: 1px solid #ffffff;
-  box-shadow: 0px 6px 0px #3800d3;
 }
 
 .no-users-message {

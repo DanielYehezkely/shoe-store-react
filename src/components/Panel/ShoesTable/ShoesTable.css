@@ -24,7 +24,7 @@ td {
 
 tbody tr {
   color: black;
-  transition: all 0.25s ease;
+  transition: var(--transition);
 }
 tbody tr:hover {
   background: #014055;
