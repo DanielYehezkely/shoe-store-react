@@ -72,13 +72,13 @@
   .nav-bar {
     height: 12vh;
   }
-  
+
   .hamburger {
-    display: block; 
+    display: block;
     position: relative;
   }
 
-   .nav-links {
+  .nav-links {
     flex-direction: column;
     opacity: 0;
     visibility: hidden;
@@ -93,8 +93,9 @@
   }
 
   .nav-links.open {
-    display: flex;
-    height: 30rem; 
+    height: 30rem;
+    justify-content: flex-start;
+    width: 25%;
     opacity: 1;
     visibility: visible;
     transform: translateX(0px) translateY(30rem);
@@ -106,7 +107,7 @@
   }
 
   .nav-bar ul a {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
   }
 
   .nav-bar-logo {
@@ -206,7 +207,8 @@
   }
 
   .name {
-    font-size: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
   }
 
   .SingleShoeCard {
@@ -242,6 +244,24 @@
 
   .admin-shoe-buttons {
     gap: 2rem;
+  }
+
+  .Contact {
+    width: 100%;
+    padding: 1rem;
+    gap: 3rem;
+    flex-direction: column;
+  }
+  .Contact .input-group {
+    width: 25rem;
+  }
+
+  .contact-form h1 {
+    font-size: 3.5rem;
+  }
+
+  .panel-buttons-container {
+    flex-direction: column;
   }
 }
 
@@ -306,7 +326,7 @@
   }
 
   .footer-logo img {
-    width: 100%;
+    width: 80%;
     height: 100%;
   }
 
@@ -321,7 +341,7 @@
     width: 80%;
   }
   .nav-bar ul a {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 
   .nav-bar-logo {
@@ -375,6 +395,21 @@
 
   .admin-shoe-buttons {
     gap: 2rem;
+  }
+
+  .Contact {
+    width: 100%;
+    padding: 1rem;
+    gap: 3rem;
+    flex-direction: column;
+  }
+
+  .redirect-message h2 {
+    font-size: 2rem;
+  }
+
+  .contact-form h1 {
+    font-size: 4rem;
   }
 }
 
@@ -503,6 +538,36 @@
   .admin-shoe-buttons {
     gap: 2rem;
   }
+
+  .input-group label {
+    font-size: 1.4rem;
+  }
+
+  .input-group input,
+  .input-group textarea {
+    padding: 0.5rem;
+    width: 100%;
+  }
+
+  .Contact {
+    width: 100%;
+    padding: 1rem;
+    gap: 2rem;
+  }
+
+  .redirect-message h2 {
+    font-size: 2rem;
+  }
+  .contact-form h1 {
+    font-size: 4rem;
+  }
+  .ContactInfo {
+    padding: 1rem;
+  }
+
+  .ContactInfo h2 {
+    font-size: 1.6rem;
+  }
 }
 
 /* ========================================= normal/laptop- screen - Responsive ======================================= */
@@ -574,141 +639,157 @@
   table {
     width: 80%;
   }
-}
-
-/* ========================================= big pc screen - responsive ======================================= */
-
-@media only screen and (min-width: 1700px) {
-  .home-page-title {
-    font-size: 10rem;
-  }
-
-  .home-page-main {
-    width: 30%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 6rem;
-  }
-
-  .shoes-icon {
-    font-size: 20rem;
-  }
-
-  .btn {
-    font-size: 2rem;
-  }
-
-  .HomePageForm {
-    gap: 5rem;
-  }
-
-  .HomePageForm h1 {
-    font-size: 6rem;
-  }
-
-  .HomePageForm input {
+  .Contact {
+    width: 75%;
     padding: 1rem;
-    font-size: 1.4rem;
+    gap: 2rem;
   }
-
-  .HomePageForm label {
-    font-size: 1.6rem;
-  }
-
-  .form-group {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-  }
-
-  .ErrorMessage {
-    border: 2px solid;
-    padding: 3rem;
+  .contact-image-container {
+    height: 100%;
     width: 50%;
-    font-size: 1.6rem;
   }
-  .nav-bar {
-    height: 7vh;
-  }
-
-  .nav-bar ul li a {
+  .redirect-message h2 {
     font-size: 2.5rem;
   }
-  .nav-bar ul li a:hover {
-    background-color: #086fb4;
-  }
 
-  .nav-bar-logo {
-    font-size: 6rem;
-  }
-  .Footer {
-    height: 10vh;
-  }
-
-  .footer-logo img {
-    width: 40%;
-  }
-
-  .copyrights {
-    font-size: 1.4rem;
-  }
-
-  .footer-social-links {
-    gap: 2rem;
-    font-size: 3.5rem;
-  }
-
-  .custom-toast-position {
-    font-size: 1.8rem;
-    width: 30rem;
-  }
-
-  .ShoeGenericForm {
-    min-width: 80rem;
-    padding: 5rem 2rem;
-    gap: 5rem;
-  }
-
-  .shoe-form-title {
+  .contact-form h1 {
     font-size: 5rem;
   }
 
-  .inputs-container {
-    gap: 2rem;
-  }
+  /* ========================================= big pc screen - responsive ======================================= */
 
-  .input-group {
-    gap: 1rem;
-  }
+  @media only screen and (min-width: 1700px) {
+    .home-page-title {
+      font-size: 10rem;
+    }
 
-  .input-group label {
-    font-size: 2rem;
-  }
+    .home-page-main {
+      width: 30%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 6rem;
+    }
 
-  .input-group input,
-  .input-group textarea {
-    padding: 2rem;
-    font-size: 2rem;
-  }
+    .shoes-icon {
+      font-size: 20rem;
+    }
 
-  .error-text {
-    font-size: 1.6rem;
-  }
+    .btn {
+      font-size: 2rem;
+    }
 
-  th {
-    font-size: 1.6rem;
-  }
+    .HomePageForm {
+      gap: 5rem;
+    }
 
-  td {
-    font-size: 1.6rem;
-  }
+    .HomePageForm h1 {
+      font-size: 6rem;
+    }
 
-  .name {
-    font-size: 1.6rem;
-    font-weight: 600;
+    .HomePageForm input {
+      padding: 1rem;
+      font-size: 1.4rem;
+    }
+
+    .HomePageForm label {
+      font-size: 1.6rem;
+    }
+
+    .form-group {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .ErrorMessage {
+      border: 2px solid;
+      padding: 3rem;
+      width: 50%;
+      font-size: 1.6rem;
+    }
+    .nav-bar {
+      height: 7vh;
+    }
+
+    .nav-bar ul li a {
+      font-size: 2.5rem;
+    }
+    .nav-bar ul li a:hover {
+      background-color: #086fb4;
+    }
+
+    .nav-bar-logo {
+      font-size: 6rem;
+    }
+    .Footer {
+      height: 10vh;
+    }
+
+    .footer-logo img {
+      width: 40%;
+    }
+
+    .copyrights {
+      font-size: 1.4rem;
+    }
+
+    .footer-social-links {
+      gap: 2rem;
+      font-size: 3.5rem;
+    }
+
+    .custom-toast-position {
+      font-size: 1.8rem;
+      width: 30rem;
+    }
+
+    .ShoeGenericForm {
+      min-width: 80rem;
+      padding: 5rem 2rem;
+      gap: 5rem;
+    }
+
+    .shoe-form-title {
+      font-size: 5rem;
+    }
+
+    .inputs-container {
+      gap: 2rem;
+    }
+
+    .input-group {
+      gap: 1rem;
+    }
+
+    .input-group label {
+      font-size: 2rem;
+    }
+
+    .input-group input,
+    .input-group textarea {
+      padding: 2rem;
+      font-size: 2rem;
+    }
+
+    .error-text {
+      font-size: 1.6rem;
+    }
+
+    th {
+      font-size: 1.6rem;
+    }
+
+    td {
+      font-size: 1.6rem;
+    }
+
+    .name {
+      font-size: 1.6rem;
+      font-weight: 600;
+    }
   }
 }

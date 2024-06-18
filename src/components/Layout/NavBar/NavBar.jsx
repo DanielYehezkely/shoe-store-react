@@ -11,7 +11,7 @@ const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    setIsMenuOpen((prev) => !prev);
   };
 
   return (
@@ -21,7 +21,7 @@ const NavBar = () => {
           Shoes <ICONS.Shoes />
         </div>
         <div className="hamburger" onClick={toggleMenu}>
-          {isMenuOpen ? <ICONS.Bars /> : <ICONS.CloseX />}
+          {isMenuOpen ?<ICONS.CloseX /> : <ICONS.Bars />  }
         </div>
         <ul className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
           <li>
