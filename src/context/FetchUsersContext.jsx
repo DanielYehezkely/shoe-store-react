@@ -36,7 +36,8 @@ export const FetchUsersProvider = ({ children }) => {
     setAddUsersError(null);
     try {
       await addUserCall(newCall);
-      setUsersCalls((prevCalls) => [...prevCalls, newCall]);
+      const updatedUsersCalls = await getUsersCalls();
+      setUsersCalls(updatedUsersCalls);``
     } catch (error) {
       setAddUsersError(error.message);
     } finally {
