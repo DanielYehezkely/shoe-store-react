@@ -1,5 +1,10 @@
 # Shoe Store Management Application <img src="/assets/icons/favicon.ico" alt="App Icon" width="50" height="50">
 
+| Username       | Password    |
+| -------------- | ----------- |
+|Admin           | Admin12341234 | 
+
+
 ## Table of Contents
 
 1. [Overview](#overview)
