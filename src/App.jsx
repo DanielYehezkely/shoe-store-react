@@ -1,12 +1,13 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import { HomePage, ShoesPage, AddShoePage, NotFoundPage, ShoePage, EditPage, ContactPage } from './pages';
+import { HomePage, ShoesPage, AddShoePage, NotFoundPage, ShoePage, EditPage, ContactPage, CartPage } from './pages';
 import { Layout } from "./components";
 import { AdminProvider } from "./context/CheckAdminContext";
 import { FetchShoesProvider } from "./context/FetchShoesContext";
 import PanelPage from "./pages/PanelPage/PanelPage";
 import { FetchUsersProvider } from "./context/FetchUsersContext";
+import { CartProvider } from "./context/CartContext";
 
 
 
@@ -45,6 +46,10 @@ function App() {
           path: 'contact',
           element: <ContactPage />,
         },
+        {
+          path: 'cart',
+          element: <CartPage />,
+        }
       ],
     },
     {
@@ -57,7 +62,9 @@ function App() {
     <AdminProvider>
       <FetchShoesProvider>
         <FetchUsersProvider>
-          <RouterProvider router={router} />
+          <CartProvider>
+            <RouterProvider router={router} />
+          </CartProvider>
         </FetchUsersProvider>
       </FetchShoesProvider>
     </AdminProvider>

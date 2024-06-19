@@ -1,0 +1,10 @@
+.toast .Toastify__toast--success {
+  background-color: #4caf50; 
+  color: white; 
+  font-size: 16px; 
+  border-radius: 10px; 
+  padding: 10px; 
+  position: fixed;
+  bottom: 5rem;
+  right: 30rem;
+}

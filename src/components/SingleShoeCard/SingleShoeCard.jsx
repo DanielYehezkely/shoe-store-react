@@ -1,9 +1,9 @@
 import React from "react";
 
 import { useAdmin } from "../../context/CheckAdminContext";
-
 import DeleteButton from "./DeleteButton/DeleteButton";
 import EditButton from "./EditButton/EditButton";
+import AddToCartButton from "./AddToCartButton/AddToCartButton";
 
 import './SingleShoeCard.css';
 
@@ -11,6 +11,7 @@ import './SingleShoeCard.css';
 const SingleShoeCard = ({ shoe }) => {
 
   const { isAdmin } = useAdmin();
+  
  
   return (
     <>
@@ -26,7 +27,7 @@ const SingleShoeCard = ({ shoe }) => {
                 <DeleteButton shoeId={shoe.id} />
               </div>
             ) : (
-              <button className="btn buy-button">Buy Now</button>
+              <AddToCartButton shoeItem={shoe}/>
             )}
           </div>
         </div>
