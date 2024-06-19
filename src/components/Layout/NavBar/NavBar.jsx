@@ -2,13 +2,16 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 import { useAdmin } from "../../../context/CheckAdminContext";
+import { useCart } from "../../../context/CartContext";
 import ICONS from "../../../models/icons";
 
 import './NavBar.css'
 
 const NavBar = () => {
+  
   const { isAdmin, logout } = useAdmin();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { cartItems } = useCart();
 
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
@@ -43,7 +46,10 @@ const NavBar = () => {
             </li>
             <li>
               <NavLink to="/shoes/cart" className={({ isActive }) => (isActive ? 'isActive' : '')} end>
-                Cart
+                Cart <ICONS.Cart/>
+                  {cartItems.length > 0 && (
+                    <span className="cart-count">{cartItems.length}</span> 
+                  )}
               </NavLink>
             </li>
             </>
