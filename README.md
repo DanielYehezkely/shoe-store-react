@@ -44,6 +44,10 @@ The Shoe Store Management Application is a comprehensive web-based platform that
 5. **Routing and Navigation**
    - The application uses React Router to enable smooth navigation between the home, shop, and contact pages.
 
+6. **Shopping Cart**
+   - Users can add shoes to their cart from the shoe details page.
+   - The cart page displays all the added shoes with options to remove them.
+
 ### Enhanced Features:
 1. **CRUD Operations**
    - Admins can perform Create, Read, Update, and Delete operations on both shoes and user messages.
@@ -106,6 +110,11 @@ Visit `http://localhost:3000`
 4. **Admin Management Panel**:
 - Manage the shoe inventory by adding, editing, or deleting shoes.
 - Review and manage user messages, marking them as dealt with or deleting them.
+
+5. **Managing the Cart**:
+- Users can add shoes to their cart from the shoe details page by clicking the "Add to Cart" button.
+- Navigate to the cart page via the cart link in the navigation bar.
+- On the cart page, users can view all items added to their cart, and remove any item by clicking the "Remove" button.
 
 ## Environment Variables
 
@@ -272,6 +281,9 @@ Visit `http://localhost:3000`
 ***
 3. **Contact Page**
 ![Contact Page](/public/assets/readme-images/readme-users-contactPage.png)
+***
+4. **Cart Page**
+![Contact Page](/public/assets/readme-images/readme-users-cartPage.png)
 ***
 
 
