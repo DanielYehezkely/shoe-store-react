@@ -6,6 +6,6 @@ import ShoePage from './ShoePage/ShoePage';
 import EditPage from "./EditPage/EditPage";
 import ContactPage from './ContactPage/ContactPage';
 import CartPage from './CartPage/CartPage';
+import PanelPage from './PanelPage/PanelPage';
 
-
-export { HomePage, ShoesPage, AddShoePage, NotFoundPage, ShoePage, EditPage, ContactPage, CartPage };
+export { HomePage, ShoesPage, AddShoePage, NotFoundPage, ShoePage, EditPage, ContactPage, CartPage , PanelPage};
