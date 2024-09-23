@@ -23,7 +23,7 @@
 
 ## Overview
 
-The Shoe Store Management Application is a comprehensive web-based platform that allows users to browse a collection of shoes and contact the store, while providing administrators with extensive management capabilities. Built using React, this application leverages modern web technologies and libraries to deliver a responsive and interactive user experience.
+The Shoe Store Management Application is a comprehensive web-based platform that allows users to browse a collection of shoes and contact the store, while providing administrators with extensive management capabilities. Built using React, this application leverages modern web technologies and libraries to deliver a responsive and interactive user experience..
 
 ## Features
 
